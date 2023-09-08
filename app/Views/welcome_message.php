@@ -1,325 +1,993 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome to CodeIgniter 4!</title>
-    <meta name="description" content="The small framework with powerful features">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico">
-
-    <!-- STYLES -->
-
-    <style {csp-style-nonce}>
-        * {
-            transition: background-color 300ms ease, color 300ms ease;
-        }
-        *:focus {
-            background-color: rgba(221, 72, 20, .2);
-            outline: none;
-        }
-        html, body {
-            color: rgba(33, 37, 41, 1);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-            font-size: 16px;
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-        }
-        header {
-            background-color: rgba(247, 248, 249, 1);
-            padding: .4rem 0 0;
-        }
-        .menu {
-            padding: .4rem 2rem;
-        }
-        header ul {
-            border-bottom: 1px solid rgba(242, 242, 242, 1);
-            list-style-type: none;
-            margin: 0;
-            overflow: hidden;
-            padding: 0;
-            text-align: right;
-        }
-        header li {
-            display: inline-block;
-        }
-        header li a {
-            border-radius: 5px;
-            color: rgba(0, 0, 0, .5);
-            display: block;
-            height: 44px;
-            text-decoration: none;
-        }
-        header li.menu-item a {
-            border-radius: 5px;
-            margin: 5px 0;
-            height: 38px;
-            line-height: 36px;
-            padding: .4rem .65rem;
-            text-align: center;
-        }
-        header li.menu-item a:hover,
-        header li.menu-item a:focus {
-            background-color: rgba(221, 72, 20, .2);
-            color: rgba(221, 72, 20, 1);
-        }
-        header .logo {
-            float: left;
-            height: 44px;
-            padding: .4rem .5rem;
-        }
-        header .menu-toggle {
-            display: none;
-            float: right;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        header .menu-toggle button {
-            background-color: rgba(221, 72, 20, .6);
-            border: none;
-            border-radius: 3px;
-            color: rgba(255, 255, 255, 1);
-            cursor: pointer;
-            font: inherit;
-            font-size: 1.3rem;
-            height: 36px;
-            padding: 0;
-            margin: 11px 0;
-            overflow: visible;
-            width: 40px;
-        }
-        header .menu-toggle button:hover,
-        header .menu-toggle button:focus {
-            background-color: rgba(221, 72, 20, .8);
-            color: rgba(255, 255, 255, .8);
-        }
-        header .heroe {
-            margin: 0 auto;
-            max-width: 1100px;
-            padding: 1rem 1.75rem 1.75rem 1.75rem;
-        }
-        header .heroe h1 {
-            font-size: 2.5rem;
-            font-weight: 500;
-        }
-        header .heroe h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-        }
-        section {
-            margin: 0 auto;
-            max-width: 1100px;
-            padding: 2.5rem 1.75rem 3.5rem 1.75rem;
-        }
-        section h1 {
-            margin-bottom: 2.5rem;
-        }
-        section h2 {
-            font-size: 120%;
-            line-height: 2.5rem;
-            padding-top: 1.5rem;
-        }
-        section pre {
-            background-color: rgba(247, 248, 249, 1);
-            border: 1px solid rgba(242, 242, 242, 1);
-            display: block;
-            font-size: .9rem;
-            margin: 2rem 0;
-            padding: 1rem 1.5rem;
-            white-space: pre-wrap;
-            word-break: break-all;
-        }
-        section code {
-            display: block;
-        }
-        section a {
-            color: rgba(221, 72, 20, 1);
-        }
-        section svg {
-            margin-bottom: -5px;
-            margin-right: 5px;
-            width: 25px;
-        }
-        .further {
-            background-color: rgba(247, 248, 249, 1);
-            border-bottom: 1px solid rgba(242, 242, 242, 1);
-            border-top: 1px solid rgba(242, 242, 242, 1);
-        }
-        .further h2:first-of-type {
-            padding-top: 0;
-        }
-        footer {
-            background-color: rgba(221, 72, 20, .8);
-            text-align: center;
-        }
-        footer .environment {
-            color: rgba(255, 255, 255, 1);
-            padding: 2rem 1.75rem;
-        }
-        footer .copyrights {
-            background-color: rgba(62, 62, 62, 1);
-            color: rgba(200, 200, 200, 1);
-            padding: .25rem 1.75rem;
-        }
-        @media (max-width: 629px) {
-            header ul {
-                padding: 0;
-            }
-            header .menu-toggle {
-                padding: 0 1rem;
-            }
-            header .menu-item {
-                background-color: rgba(244, 245, 246, 1);
-                border-top: 1px solid rgba(242, 242, 242, 1);
-                margin: 0 15px;
-                width: calc(100% - 30px);
-            }
-            header .menu-toggle {
-                display: block;
-            }
-            header .hidden {
-                display: none;
-            }
-            header li.menu-item a {
-                background-color: rgba(221, 72, 20, .1);
-            }
-            header li.menu-item a:hover,
-            header li.menu-item a:focus {
-                background-color: rgba(221, 72, 20, .7);
-                color: rgba(255, 255, 255, .8);
-            }
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/img/apple-icon.png') ?>">
+    <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.png') ?>">
+    <title>
+        Soft UI Dashboard by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="<?= base_url('assets/css/nucleo-icons.css') ?>" rel="stylesheet" />
+    <link href="<?= base_url('assets/css/nucleo-svg.css') ?>/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="<?= base_url('assets/css/nucleo-svg.css') ?>/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="<?= base_url('assets/css/soft-ui-dashboard.css?v=1.0.7') ?>" rel="stylesheet" />
+    <!-- Nepcha Analytics (nepcha.com) -->
+    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+    <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
-<body>
 
-<!-- HEADER: MENU + HEROE SECTION -->
-<header>
+<body class="g-sidenav-show  bg-gray-100">
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+        <div class="sidenav-header">
+            <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
+                <img src="<?= base_url('assets/img/logo-ct-dark.png') ?>" class="navbar-brand-img h-100" alt="main_logo">
+                <span class="ms-1 font-weight-bold">Soft UI Dashboard</span>
+            </a>
+        </div>
+        <hr class="horizontal dark mt-0">
+        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link  active" href="../pages/dashboard.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>shop </title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(0.000000, 148.000000)">
+                                                <path class="color-background opacity-6" d="M46.7199583,10.7414583 L40.8449583,0.949791667 C40.4909749,0.360605034 39.8540131,0 39.1666667,0 L7.83333333,0 C7.1459869,0 6.50902508,0.360605034 6.15504167,0.949791667 L0.280041667,10.7414583 C0.0969176761,11.0460037 -1.23209662e-05,11.3946378 -1.23209662e-05,11.75 C-0.00758042603,16.0663731 3.48367543,19.5725301 7.80004167,19.5833333 L7.81570833,19.5833333 C9.75003686,19.5882688 11.6168794,18.8726691 13.0522917,17.5760417 C16.0171492,20.2556967 20.5292675,20.2556967 23.494125,17.5760417 C26.4604562,20.2616016 30.9794188,20.2616016 33.94575,17.5760417 C36.2421905,19.6477597 39.5441143,20.1708521 42.3684437,18.9103691 C45.1927731,17.649886 47.0084685,14.8428276 47.0000295,11.75 C47.0000295,11.3946378 46.9030823,11.0460037 46.7199583,10.7414583 Z"></path>
+                                                <path class="color-background" d="M39.198,22.4912623 C37.3776246,22.4928106 35.5817531,22.0149171 33.951625,21.0951667 L33.92225,21.1107282 C31.1430221,22.6838032 27.9255001,22.9318916 24.9844167,21.7998837 C24.4750389,21.605469 23.9777983,21.3722567 23.4960833,21.1018359 L23.4745417,21.1129513 C20.6961809,22.6871153 17.4786145,22.9344611 14.5386667,21.7998837 C14.029926,21.6054643 13.533337,21.3722507 13.0522917,21.1018359 C11.4250962,22.0190609 9.63246555,22.4947009 7.81570833,22.4912623 C7.16510551,22.4842162 6.51607673,22.4173045 5.875,22.2911849 L5.875,44.7220845 C5.875,45.9498589 6.7517757,46.9451667 7.83333333,46.9451667 L19.5833333,46.9451667 L19.5833333,33.6066734 L27.4166667,33.6066734 L27.4166667,46.9451667 L39.1666667,46.9451667 C40.2482243,46.9451667 41.125,45.9498589 41.125,44.7220845 L41.125,22.2822926 C40.4887822,22.4116582 39.8442868,22.4815492 39.198,22.4912623 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="../pages/tables.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>office</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g id="office" transform="translate(153.000000, 2.000000)">
+                                                <path class="color-background opacity-6" d="M12.25,17.5 L8.75,17.5 L8.75,1.75 C8.75,0.78225 9.53225,0 10.5,0 L31.5,0 C32.46775,0 33.25,0.78225 33.25,1.75 L33.25,12.25 L29.75,12.25 L29.75,3.5 L12.25,3.5 L12.25,17.5 Z"></path>
+                                                <path class="color-background" d="M40.25,14 L24.5,14 C23.53225,14 22.75,14.78225 22.75,15.75 L22.75,38.5 L19.25,38.5 L19.25,22.75 C19.25,21.78225 18.46775,21 17.5,21 L1.75,21 C0.78225,21 0,21.78225 0,22.75 L0,40.25 C0,41.21775 0.78225,42 1.75,42 L40.25,42 C41.21775,42 42,41.21775 42,40.25 L42,15.75 C42,14.78225 41.21775,14 40.25,14 Z M12.25,36.75 L7,36.75 L7,33.25 L12.25,33.25 L12.25,36.75 Z M12.25,29.75 L7,29.75 L7,26.25 L12.25,26.25 L12.25,29.75 Z M35,36.75 L29.75,36.75 L29.75,33.25 L35,33.25 L35,36.75 Z M35,29.75 L29.75,29.75 L29.75,26.25 L35,26.25 L35,29.75 Z M35,22.75 L29.75,22.75 L29.75,19.25 L35,19.25 L35,22.75 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="../pages/billing.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>credit-card</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(453.000000, 454.000000)">
+                                                <path class="color-background opacity-6" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"></path>
+                                                <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Billing</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="../pages/virtual-reality.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>box-3d-50</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-2319.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(603.000000, 0.000000)">
+                                                <path class="color-background" d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"></path>
+                                                <path class="color-background opacity-6" d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"></path>
+                                                <path class="color-background opacity-6" d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Virtual Reality</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="../pages/rtl.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>settings</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(304.000000, 151.000000)">
+                                                <polygon class="color-background opacity-6" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
+                                                <path class="color-background opacity-6" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
+                                                <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">RTL</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="../pages/profile.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>customer-support</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(1.000000, 0.000000)">
+                                                <path class="color-background opacity-6" d="M45,0 L26,0 C25.447,0 25,0.447 25,1 L25,20 C25,20.379 25.214,20.725 25.553,20.895 C25.694,20.965 25.848,21 26,21 C26.212,21 26.424,20.933 26.6,20.8 L34.333,15 L45,15 C45.553,15 46,14.553 46,14 L46,1 C46,0.447 45.553,0 45,0 Z"></path>
+                                                <path class="color-background" d="M22.883,32.86 C20.761,32.012 17.324,31 13,31 C8.676,31 5.239,32.012 3.116,32.86 C1.224,33.619 0,35.438 0,37.494 L0,41 C0,41.553 0.447,42 1,42 L25,42 C25.553,42 26,41.553 26,41 L26,37.494 C26,35.438 24.776,33.619 22.883,32.86 Z"></path>
+                                                <path class="color-background" d="M13,28 C17.432,28 21,22.529 21,18 C21,13.589 17.411,10 13,10 C8.589,10 5,13.589 5,18 C5,22.529 8.568,28 13,28 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="../pages/sign-in.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>document</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(154.000000, 300.000000)">
+                                                <path class="color-background opacity-6" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"></path>
+                                                <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Sign In</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="../pages/sign-up.html">
+                        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>spaceship</title>
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-1720.000000, -592.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g transform="translate(1716.000000, 291.000000)">
+                                            <g transform="translate(4.000000, 301.000000)">
+                                                <path class="color-background" d="M39.3,0.706666667 C38.9660984,0.370464027 38.5048767,0.192278529 38.0316667,0.216666667 C14.6516667,1.43666667 6.015,22.2633333 5.93166667,22.4733333 C5.68236407,23.0926189 5.82664679,23.8009159 6.29833333,24.2733333 L15.7266667,33.7016667 C16.2013871,34.1756798 16.9140329,34.3188658 17.535,34.065 C17.7433333,33.98 38.4583333,25.2466667 39.7816667,1.97666667 C39.8087196,1.50414529 39.6335979,1.04240574 39.3,0.706666667 Z M25.69,19.0233333 C24.7367525,19.9768687 23.3029475,20.2622391 22.0572426,19.7463614 C20.8115377,19.2304837 19.9992882,18.0149658 19.9992882,16.6666667 C19.9992882,15.3183676 20.8115377,14.1028496 22.0572426,13.5869719 C23.3029475,13.0710943 24.7367525,13.3564646 25.69,14.31 C26.9912731,15.6116662 26.9912731,17.7216672 25.69,19.0233333 L25.69,19.0233333 Z"></path>
+                                                <path class="color-background opacity-6" d="M1.855,31.4066667 C3.05106558,30.2024182 4.79973884,29.7296005 6.43969145,30.1670277 C8.07964407,30.6044549 9.36054508,31.8853559 9.7979723,33.5253085 C10.2353995,35.1652612 9.76258177,36.9139344 8.55833333,38.11 C6.70666667,39.9616667 0,40 0,40 C0,40 0,33.2566667 1.855,31.4066667 Z"></path>
+                                                <path class="color-background opacity-6" d="M17.2616667,3.90166667 C12.4943643,3.07192755 7.62174065,4.61673894 4.20333333,8.04166667 C3.31200265,8.94126033 2.53706177,9.94913142 1.89666667,11.0416667 C1.5109569,11.6966059 1.61721591,12.5295394 2.155,13.0666667 L5.47,16.3833333 C8.55036617,11.4946947 12.5559074,7.25476565 17.2616667,3.90166667 L17.2616667,3.90166667 Z"></path>
+                                                <path class="color-background opacity-6" d="M36.0983333,22.7383333 C36.9280725,27.5056357 35.3832611,32.3782594 31.9583333,35.7966667 C31.0587397,36.6879974 30.0508686,37.4629382 28.9583333,38.1033333 C28.3033941,38.4890431 27.4704606,38.3827841 26.9333333,37.845 L23.6166667,34.53 C28.5053053,31.4496338 32.7452344,27.4440926 36.0983333,22.7383333 L36.0983333,22.7383333 Z"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Sign Up</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+            <div class="container-fluid py-1 px-3">
+                <nav aria-label="breadcrumb">
+                    <h6 class="font-weight-bolder mb-0">Dashboard</h6>
+                    <p class="text-small fs-6 text-muted">Berikut adalah..</p>
+                </nav>
+                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                        <div class="input-group">
+                            <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Type here...">
+                        </div>
+                    </div>
+                    <ul class="navbar-nav  justify-content-end">
+                        <li class="nav-item d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+                                <i class="fa fa-user me-sm-1"></i>
+                                <span class="d-sm-inline d-none">Sign In</span>
+                            </a>
+                        </li>
+                        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                                <div class="sidenav-toggler-inner">
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                    <i class="sidenav-toggler-line"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item px-3 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0">
+                                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell cursor-pointer"></i>
+                            </a>
+                            <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                                <li class="mb-2">
+                                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                                        <div class="d-flex py-1">
+                                            <div class="my-auto">
+                                                <img src="<?= base_url('assets//img/team-2.jpg') ?>" class="avatar avatar-sm  me-3 ">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    <span class="font-weight-bold">New message</span> from Laur
+                                                </h6>
+                                                <p class="text-xs text-secondary mb-0 ">
+                                                    <i class="fa fa-clock me-1"></i>
+                                                    13 minutes ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                                        <div class="d-flex py-1">
+                                            <div class="my-auto">
+                                                <img src="<?= base_url('assets//img/small-logos/logo-spotify.svg') ?>" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    <span class="font-weight-bold">New album</span> by Travis Scott
+                                                </h6>
+                                                <p class="text-xs text-secondary mb-0 ">
+                                                    <i class="fa fa-clock me-1"></i>
+                                                    1 day
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                                        <div class="d-flex py-1">
+                                            <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                                                <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <title>credit-card</title>
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                                            <g transform="translate(1716.000000, 291.000000)">
+                                                                <g transform="translate(453.000000, 454.000000)">
+                                                                    <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
+                                                                    <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    Payment successfully completed
+                                                </h6>
+                                                <p class="text-xs text-secondary mb-0 ">
+                                                    <i class="fa fa-clock me-1"></i>
+                                                    2 days
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="container-fluid py-4">
+            <div class="row mt-4">
+                <div class="col-lg-4 mb-lg-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="d-flex flex-column h-100">
+                                        <p class="mb-1 pt-0 border-bottom text-bold">Aktifitas Terakhir Anda</p>
+                                        <p class="text-muted">From colors, cards, typography to complex elements, you will find the full documentation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
 
-    <div class="menu">
-        <ul>
-            <li class="logo">
-                <a href="https://codeigniter.com" target="_blank">
-                    <svg role="img" aria-label="Visit CodeIgniter.com official website!" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2100 500" height="44"><path fill="#dd4814" d="M148.2 411c-20.53-9.07-34.48-28.61-36.31-50.99 1.2-23.02 13.36-44.06 32.67-56.61-3.17 7.73-2.4 16.53 2 23.6 5.01 7 13.63 10.36 22.07 8.61 12.02-3.38 19.06-15.86 15.68-27.89-1.2-4.21-3.6-8.03-6.88-10.91-13.6-11.06-20.43-28.44-18-45.81 2.33-9.2 7.42-17.52 14.61-23.8-5.4 14.4 9.83 28.61 20.05 35.6 18.14 10.88 35.6 22.84 52.32 35.81 18.27 14.4 28.23 36.94 26.67 60-4.11 24.54-21.47 44.8-45.13 52.4 47.33-10.53 96.13-48.13 97.06-101.46-.93-42.67-26.4-80.96-65.33-98.4h-1.73c.86 2.09 1.28 4.34 1.2 6.61.13-1.47.13-2.93 0-4.4.21 1.73.21 3.47 0 5.2-2.96 12.13-15.2 19.6-27.36 16.64-4.86-1.2-9.2-3.93-12.32-7.87-15.6-20 0-42.76 2.61-64.76 1.6-28.13-11.25-55.02-34.05-71.46 11.41 19.02-3.79 44-14.84 58.21-11.07 14.21-27.07 24.8-40.11 37.2-14.05 13.07-26.93 27.44-38.49 42.8-24.99 30.53-34.8 70.8-26.67 109.4 11.15 37.2 42.07 65.15 80.2 72.4h.21l-.13-.12Zm324.56-159.8q0-17.92 6.16-35.56 6.44-17.92 18.48-31.92t29.68-22.68q17.64-8.96 40.04-8.96 26.6 0 45.36 12.04 19.04 12.04 28 31.36l-15.4 9.52q-4.76-9.8-11.76-16.52-6.72-6.72-14.56-10.92-7.84-4.2-16.24-5.88-8.4-1.96-16.52-1.96-17.92 0-31.64 7.28-13.72 7.28-23.24 19.04-9.24 11.76-14 26.6-4.76 14.56-4.76 29.68 0 16.52 5.6 31.64 5.88 15.12 15.68 26.88 10.08 11.48 23.52 18.48 13.72 6.72 29.68 6.72 8.4 0 17.08-1.96 8.96-2.24 17.08-6.72 8.4-4.76 15.4-11.48 7-7 11.76-16.8l16.24 8.4q-4.76 11.2-13.44 19.88-8.68 8.4-19.32 14.28-10.64 5.88-22.68 8.96-11.76 3.08-23.24 3.08-20.44 0-37.52-8.96-17.08-8.96-29.4-23.24-12.32-14.56-19.32-32.76-6.72-18.48-6.72-37.52Zm263.48 103.6q-15.96 0-29.12-5.88-13.16-6.16-22.96-16.52-9.52-10.36-14.84-24.08Q664 294.6 664 279.48q0-15.4 5.32-29.12 5.6-13.72 15.12-24.08 9.8-10.36 22.96-16.52t28.84-6.16q15.68 0 28.84 6.16 13.44 6.16 22.96 16.52 9.8 10.36 15.12 24.08 5.6 13.72 5.6 29.12 0 15.12-5.32 28.84t-15.12 24.08q-9.52 10.36-22.96 16.52-13.16 5.88-29.12 5.88Zm-52.92-75.04q0 12.32 4.2 22.96 4.2 10.36 11.2 18.48 7.28 7.84 16.8 12.32 9.8 4.48 20.72 4.48 10.92 0 20.44-4.48 9.8-4.76 17.08-12.6 7.28-8.12 11.48-18.76 4.2-10.64 4.2-22.96 0-12.04-4.2-22.68-4.2-10.92-11.48-18.76-7.28-8.12-17.08-12.6-9.52-4.76-20.44-4.76-10.92 0-20.44 4.76-9.52 4.48-16.8 12.6-7.28 8.12-11.48 19.04-4.2 10.64-4.2 22.96ZM900.6 354.8q-15.12 0-28-6.16-12.88-6.44-22.12-16.8t-14.56-23.8q-5.04-13.72-5.04-28.56 0-15.4 5.04-29.12 5.04-14 13.72-24.36 8.96-10.36 21-16.24 12.32-6.16 26.88-6.16 18.48 0 32.76 9.8 14.28 9.52 22.4 23.24V147.6h19.04v179.76q0 7.84 6.72 7.84V352q-4.2.84-6.72.84-6.72 0-11.76-4.2-5.04-4.48-5.04-10.64v-14.28Q946.24 338 931.4 346.4t-30.8 8.4Zm4.2-16.8q7 0 14.84-2.8 8.12-2.8 15.12-7.56 7-5.04 11.76-11.48 5.04-6.72 6.16-14.28V256.8q-2.8-7.56-8.12-14-5.32-6.72-12.32-11.76-6.72-5.04-14.56-7.84-7.84-2.8-15.4-2.8-11.76 0-21.28 5.04-9.52 5.04-16.52 13.44-6.72 8.12-10.36 18.76-3.64 10.64-3.64 21.84 0 11.76 4.2 22.4 4.2 10.64 11.48 18.76 7.28 7.84 17.08 12.6Q893.32 338 904.8 338Zm173.04 16.8q-15.96 0-29.4-5.88-13.16-6.16-22.96-16.52-9.8-10.64-15.4-24.36-5.32-13.72-5.32-29.4 0-15.4 5.32-28.84 5.6-13.72 15.12-23.8 9.8-10.36 23.24-16.24 13.44-6.16 29.12-6.16 15.96 0 29.12 6.16 13.44 5.88 22.96 16.24 9.52 10.36 14.84 23.8 5.32 13.44 5.32 28.56v4.48q0 2.24-.28 3.08h-124.88q.84 11.76 5.32 21.84 4.76 9.8 12.04 17.08 7.28 7.28 16.52 11.48 9.52 3.92 20.16 3.92 7 0 14-1.96t12.88-5.32q5.88-3.36 10.64-8.12 4.76-5.04 7.28-10.92l16.52 4.48q-3.36 8.12-9.52 14.84-6.16 6.44-14.28 11.48-8.12 4.76-17.92 7.56-9.8 2.52-20.44 2.52Zm-53.48-83.44h107.24q-.84-11.76-5.6-21.28-4.48-9.8-11.76-16.8-7-7-16.52-10.92-9.24-3.92-19.88-3.92-10.64 0-20.16 3.92t-16.8 10.92q-7 7-11.48 16.8-4.2 9.8-5.04 21.28Zm193.2 80.64h-38.64V153.2h38.64V352Zm93.52.84q-14.84 0-26.88-5.88t-21-15.96q-8.68-10.36-13.44-23.8-4.76-13.44-4.76-28.56 0-15.96 5.04-29.68 5.04-13.72 14-24.08 8.96-10.36 21.56-16.24 12.6-5.88 27.72-5.88 17.08 0 29.96 7.84 12.88 7.56 21.28 20.44v-25.76h32.76V345q0 16.24-6.16 29.12-6.16 12.88-17.08 21.84-10.64 8.96-25.76 13.72-14.84 4.76-32.48 4.76-24.08 0-40.6-7.84-16.24-8.12-28-22.68l20.44-19.88q8.4 10.36 21 16.24 12.88 5.88 27.16 5.88 8.68 0 16.52-2.24 8.12-2.52 14.28-7.56 6.16-5.04 9.52-12.88 3.64-7.84 3.64-18.48v-18.48q-7.28 12.6-20.44 19.6-13.16 6.72-28.28 6.72Zm12.6-29.96q6.16 0 11.76-1.96t10.36-5.32q4.76-3.36 8.4-7.84 3.64-4.48 5.6-9.52v-35q-5.04-12.88-15.96-20.72-10.64-7.84-22.4-7.84-8.68 0-15.68 3.92-7 3.64-12.04 10.08-5.04 6.16-7.84 14.28-2.52 8.12-2.52 16.8 0 8.96 3.08 16.8t8.4 13.72q5.6 5.88 12.88 9.24 7.28 3.36 15.96 3.36Zm243.88-62.44V352h-37.52v-82.32q0-17.64-6.16-25.76-6.16-8.12-17.08-8.12-5.6 0-11.48 2.24-5.88 2.24-11.2 6.44-5.04 3.92-9.24 9.52t-6.16 12.32V352h-37.52V205.28h33.88v27.16q8.12-14 23.52-21.84t34.72-7.84q13.72 0 22.4 5.04 8.68 5.04 13.44 13.16 4.76 8.12 6.44 18.48 1.96 10.36 1.96 21Zm70.28 91.56h-37.52V205.28h37.52V352Zm0-167.16h-37.52V147.6h37.52v37.24Zm114.24 129.92 7.56 29.68q-7.56 3.36-18.48 6.72-10.92 3.36-22.96 3.36-7.84 0-14.84-1.96-6.72-1.96-12.04-6.16-5.04-4.48-8.12-11.2-3.08-7-3.08-16.8v-84.28h-19.32v-28.84h19.32v-47.6h37.52v47.6h30.8v28.84h-30.8v71.68q0 7.84 3.92 11.2 4.2 3.08 10.08 3.08t11.48-1.96q5.6-1.96 8.96-3.36Zm91.56 40.04q-17.64 0-31.92-5.88-14.28-6.16-24.36-16.52t-15.68-24.08q-5.32-13.72-5.32-28.84 0-15.68 5.32-29.4 5.32-14 15.4-24.36 10.08-10.64 24.36-16.8 14.56-6.16 32.48-6.16 17.92 0 31.92 6.16 14.28 6.16 24.08 16.52 10.08 10.36 15.12 24.08 5.32 13.72 5.32 28.56 0 3.64-.28 7 0 3.36-.56 5.6h-113.4q.84 8.68 4.2 15.4 3.36 6.72 8.68 11.48 5.32 4.76 12.04 7.28 6.72 2.52 14 2.52 11.2 0 21-5.32 10.08-5.6 13.72-14.56l32.2 8.96q-8.12 16.8-26.04 27.72-17.64 10.64-42.28 10.64Zm-38.08-88.48h76.16q-1.4-16.52-12.32-26.32-10.64-10.08-26.04-10.08-7.56 0-14.28 2.8-6.44 2.52-11.48 7.28t-8.4 11.48q-3.08 6.72-3.64 14.84Zm225.12-62.72v34.16q-17.08.28-30.52 6.72-13.44 6.16-19.32 18.76V352h-37.52V205.28h34.44v31.36q3.92-7.56 9.24-13.44 5.32-6.16 11.48-10.64t12.32-6.72q6.44-2.52 12.32-2.52h4.48q1.68 0 3.08.28Z"/></svg>
+                <div class="col-lg-7">
+                    <div class="card z-index-2">
+                        <div class="card-header pb-0">
+                            <h6>Sales overview</h6>
+                            <p class="text-sm">
+                                <i class="fa fa-arrow-up text-success"></i>
+                                <span class="font-weight-bold">4% more</span> in 2021
+                            </p>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="chart">
+                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+                    <div class="card">
+                        <div class="card-header pb-0">
+                            <div class="row">
+                                <div class="col-lg-6 col-7">
+                                    <h6>Projects</h6>
+                                    <p class="text-sm mb-0">
+                                        <i class="fa fa-check text-info" aria-hidden="true"></i>
+                                        <span class="font-weight-bold ms-1">30 done</span> this month
+                                    </p>
+                                </div>
+                                <div class="col-lg-6 col-5 my-auto text-end">
+                                    <div class="dropdown float-lg-end pe-4">
+                                        <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-v text-secondary"></i>
+                                        </a>
+                                        <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
+                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
+                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pb-2">
+                            <div class="table-responsive">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="<?= base_url('assets/img/small-logos/logo-xd.svg') ?>" class="avatar avatar-sm me-3" alt="xd">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                                        <img src="<?= base_url('assets/img/team-1.jpg') ?>" alt="team1">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                                        <img src="<?= base_url('assets/img/team-2.jpg') ?>" alt="team2">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
+                                                        <img src="<?= base_url('assets/img/team-3.jpg') ?>" alt="team3">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                                        <img src="<?= base_url('assets/img/team-4.jpg') ?>" alt="team4">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold"> $14,000 </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <div class="progress-wrapper w-75 mx-auto">
+                                                    <div class="progress-info">
+                                                        <div class="progress-percentage">
+                                                            <span class="text-xs font-weight-bold">60%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="<?= base_url('assets/img/small-logos/logo-atlassian.svg') ?>" class="avatar avatar-sm me-3" alt="atlassian">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">Add Progress Track</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                                        <img src="<?= base_url('assets/img/team-2.jpg') ?>" alt="team5">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                                        <img src="<?= base_url('assets/img/team-4.jpg') ?>" alt="team6">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold"> $3,000 </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <div class="progress-wrapper w-75 mx-auto">
+                                                    <div class="progress-info">
+                                                        <div class="progress-percentage">
+                                                            <span class="text-xs font-weight-bold">10%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="<?= base_url('assets//img/small-logos/logo-slack.svg') ?>" class="avatar avatar-sm me-3" alt="team7">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                                        <img src="<?= base_url('assets/img/team-3.jpg') ?>" alt="team8">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                                        <img src="<?= base_url('assets/img/team-1.jpg') ?>" alt="team9">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold"> Not set </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <div class="progress-wrapper w-75 mx-auto">
+                                                    <div class="progress-info">
+                                                        <div class="progress-percentage">
+                                                            <span class="text-xs font-weight-bold">100%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="<?= base_url('assets/img/small-logos/logo-spotify.svg') ?>" class="avatar avatar-sm me-3" alt="spotify">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                                        <img src="<?= base_url('assets/img/team-4.jpg') ?>" alt="user1">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                                        <img src="<?= base_url('assets/img/team-3.jpg') ?>" alt="user2">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
+                                                        <img src="<?= base_url('assets/img/team-4.jpg') ?>" alt="user3">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                                        <img src="<?= base_url('assets/img/team-1.jpg') ?>" alt="user4">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold"> $20,500 </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <div class="progress-wrapper w-75 mx-auto">
+                                                    <div class="progress-info">
+                                                        <div class="progress-percentage">
+                                                            <span class="text-xs font-weight-bold">100%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="<?= base_url('assets/img/small-logos/logo-jira.svg') ?>" class="avatar avatar-sm me-3" alt="jira">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                                        <img src="<?= base_url('assets/img/team-4.jpg') ?>" alt="user5">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold"> $500 </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <div class="progress-wrapper w-75 mx-auto">
+                                                    <div class="progress-info">
+                                                        <div class="progress-percentage">
+                                                            <span class="text-xs font-weight-bold">25%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="<?= base_url('assets/img/small-logos/logo-invision.svg') ?>" class="avatar avatar-sm me-3" alt="invision">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                                        <img src="<?= base_url('assets/img/team-1.jpg') ?>" alt="user6">
+                                                    </a>
+                                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                                        <img src="<?= base_url('assets/img/team-4.jpg') ?>" alt="user7">
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="text-xs font-weight-bold"> $2,000 </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <div class="progress-wrapper w-75 mx-auto">
+                                                    <div class="progress-info">
+                                                        <div class="progress-percentage">
+                                                            <span class="text-xs font-weight-bold">40%</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0">
+                            <h6>Orders overview</h6>
+                            <p class="text-sm">
+                                <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
+                                <span class="font-weight-bold">24%</span> this month
+                            </p>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="timeline timeline-one-side">
+                                <div class="timeline-block mb-3">
+                                    <span class="timeline-step">
+                                        <i class="ni ni-bell-55 text-success text-gradient"></i>
+                                    </span>
+                                    <div class="timeline-content">
+                                        <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
+                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-block mb-3">
+                                    <span class="timeline-step">
+                                        <i class="ni ni-html5 text-danger text-gradient"></i>
+                                    </span>
+                                    <div class="timeline-content">
+                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
+                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-block mb-3">
+                                    <span class="timeline-step">
+                                        <i class="ni ni-cart text-info text-gradient"></i>
+                                    </span>
+                                    <div class="timeline-content">
+                                        <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
+                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-block mb-3">
+                                    <span class="timeline-step">
+                                        <i class="ni ni-credit-card text-warning text-gradient"></i>
+                                    </span>
+                                    <div class="timeline-content">
+                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
+                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-block mb-3">
+                                    <span class="timeline-step">
+                                        <i class="ni ni-key-25 text-primary text-gradient"></i>
+                                    </span>
+                                    <div class="timeline-content">
+                                        <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
+                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-block">
+                                    <span class="timeline-step">
+                                        <i class="ni ni-money-coins text-dark text-gradient"></i>
+                                    </span>
+                                    <div class="timeline-content">
+                                        <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
+                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer pt-3  ">
+                <div class="container-fluid">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col-lg-6 mb-lg-0 mb-4">
+                            <div class="copyright text-center text-sm text-muted text-lg-start">
+                                © <script>
+                                    document.write(new Date().getFullYear())
+                                </script>,
+                                made with <i class="fa fa-heart"></i> by
+                                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                                for a better web.
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                                <li class="nav-item">
+                                    <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
+        <div class="card shadow-lg ">
+            <div class="card-header pb-0 pt-3 ">
+                <div class="float-start">
+                    <h5 class="mt-3 mb-0">Soft UI Configurator</h5>
+                    <p>See our dashboard options.</p>
+                </div>
+                <div class="float-end mt-4">
+                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <!-- End Toggle Button -->
+            </div>
+            <hr class="horizontal dark my-1">
+            <div class="card-body pt-sm-3 pt-0">
+                <!-- Sidebar Backgrounds -->
+                <div>
+                    <h6 class="mb-0">Sidebar Colors</h6>
+                </div>
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors my-2 text-start">
+                        <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+                    </div>
                 </a>
-            </li>
-            <li class="menu-toggle">
-                <button onclick="toggleMenu();">&#9776;</button>
-            </li>
-            <li class="menu-item hidden"><a href="#">Home</a></li>
-            <li class="menu-item hidden"><a href="https://codeigniter4.github.io/userguide/" target="_blank">Docs</a>
-            </li>
-            <li class="menu-item hidden"><a href="https://forum.codeigniter.com/" target="_blank">Community</a></li>
-            <li class="menu-item hidden"><a
-                    href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
-            </li>
-        </ul>
+                <!-- Sidenav Type -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Sidenav Type</h6>
+                    <p class="text-sm">Choose between 2 different sidenav types.</p>
+                </div>
+                <div class="d-flex">
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+                </div>
+                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+                <!-- Navbar Fixed -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Navbar Fixed</h6>
+                </div>
+                <div class="form-check form-switch ps-0">
+                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+                </div>
+                <hr class="horizontal dark my-sm-4">
+                <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard">Free Download</a>
+                <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard">View documentation</a>
+                <div class="w-100 text-center">
+                    <a class="github-button" href="https://github.com/creativetimofficial/soft-ui-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/soft-ui-dashboard on GitHub">Star</a>
+                    <h6 class="mt-3">Thank you for sharing!</h6>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20Soft%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+                        <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/soft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+                        <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+    <!--   Core JS Files   -->
+    <script src="<?= base_url('assets/js/core/popper.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/core/bootstrap.min.js') ?>"></script>
+    <script src="<?= base_url('assets//js/plugins/perfect-scrollbar.min.js') ?>"></script>
+    <script src="<?= base_url('assets//js/plugins/smooth-scrollbar.min.js') ?>"></script>
+    <script src="<?= base_url('assets//js/plugins/chartjs.min.js') ?>"></script>
+    <script>
+        var ctx = document.getElementById("chart-bars").getContext("2d");
 
-    <div class="heroe">
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                    label: "Sales",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    borderSkipped: false,
+                    backgroundColor: "#fff",
+                    data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+                    maxBarThickness: 6
+                }, ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                        },
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: 500,
+                            beginAtZero: true,
+                            padding: 15,
+                            font: {
+                                size: 14,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                            color: "#fff"
+                        },
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false
+                        },
+                        ticks: {
+                            display: false
+                        },
+                    },
+                },
+            },
+        });
 
-        <h1>Welcome to CodeIgniter <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
 
-        <h2>The small framework with powerful features</h2>
+        var ctx2 = document.getElementById("chart-line").getContext("2d");
 
-    </div>
+        var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
 
-</header>
+        gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
+        gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+        gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
 
-<!-- CONTENT -->
+        var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
 
-<section>
+        gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
+        gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
+        gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
 
-    <h1>About this page</h1>
+        new Chart(ctx2, {
+            type: "line",
+            data: {
+                labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                datasets: [{
+                        label: "Mobile apps",
+                        tension: 0.4,
+                        borderWidth: 0,
+                        pointRadius: 0,
+                        borderColor: "#cb0c9f",
+                        borderWidth: 3,
+                        backgroundColor: gradientStroke1,
+                        fill: true,
+                        data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                        maxBarThickness: 6
 
-    <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-    <p>If you would like to edit this page you will find it located at:</p>
-
-    <pre><code>app/Views/welcome_message.php</code></pre>
-
-    <p>The corresponding controller for this page can be found at:</p>
-
-    <pre><code>app/Controllers/Home.php</code></pre>
-
-</section>
-
-<div class="further">
-
-    <section>
-
-        <h1>Go further</h1>
-
-        <h2>
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect x='32' y='96' width='64' height='368' rx='16' ry='16' style='fill:none;stroke:#000;stroke-linejoin:round;stroke-width:32px'/><line x1='112' y1='224' x2='240' y2='224' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><line x1='112' y1='400' x2='240' y2='400' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><rect x='112' y='160' width='128' height='304' rx='16' ry='16' style='fill:none;stroke:#000;stroke-linejoin:round;stroke-width:32px'/><rect x='256' y='48' width='96' height='416' rx='16' ry='16' style='fill:none;stroke:#000;stroke-linejoin:round;stroke-width:32px'/><path d='M422.46,96.11l-40.4,4.25c-11.12,1.17-19.18,11.57-17.93,23.1l34.92,321.59c1.26,11.53,11.37,20,22.49,18.84l40.4-4.25c11.12-1.17,19.18-11.57,17.93-23.1L445,115C443.69,103.42,433.58,94.94,422.46,96.11Z' style='fill:none;stroke:#000;stroke-linejoin:round;stroke-width:32px'/></svg>
-            Learn
-        </h2>
-
-        <p>The User Guide contains an introduction, tutorial, a number of "how to"
-            guides, and then reference documentation for the components that make up
-            the framework. Check the <a href="https://codeigniter4.github.io/userguide"
-            target="_blank">User Guide</a> !</p>
-
-        <h2>
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M431,320.6c-1-3.6,1.2-8.6,3.3-12.2a33.68,33.68,0,0,1,2.1-3.1A162,162,0,0,0,464,215c.3-92.2-77.5-167-173.7-167C206.4,48,136.4,105.1,120,180.9a160.7,160.7,0,0,0-3.7,34.2c0,92.3,74.8,169.1,171,169.1,15.3,0,35.9-4.6,47.2-7.7s22.5-7.2,25.4-8.3a26.44,26.44,0,0,1,9.3-1.7,26,26,0,0,1,10.1,2L436,388.6a13.52,13.52,0,0,0,3.9,1,8,8,0,0,0,8-8,12.85,12.85,0,0,0-.5-2.7Z' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/><path d='M66.46,232a146.23,146.23,0,0,0,6.39,152.67c2.31,3.49,3.61,6.19,3.21,8s-11.93,61.87-11.93,61.87a8,8,0,0,0,2.71,7.68A8.17,8.17,0,0,0,72,464a7.26,7.26,0,0,0,2.91-.6l56.21-22a15.7,15.7,0,0,1,12,.2c18.94,7.38,39.88,12,60.83,12A159.21,159.21,0,0,0,284,432.11' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/></svg>
-            Discuss
-        </h2>
-
-        <p>CodeIgniter is a community-developed open source project, with several
-             venues for the community members to gather and exchange ideas. View all
-             the threads on <a href="https://forum.codeigniter.com/"
-             target="_blank">CodeIgniter's forum</a>, or <a href="https://join.slack.com/t/codeigniterchat/shared_invite/zt-rl30zw00-obL1Hr1q1ATvkzVkFp8S0Q"
-             target="_blank">chat on Slack</a> !</p>
-
-        <h2>
-             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><line x1='176' y1='48' x2='336' y2='48' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/><line x1='118' y1='304' x2='394' y2='304' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/><path d='M208,48v93.48a64.09,64.09,0,0,1-9.88,34.18L73.21,373.49C48.4,412.78,76.63,464,123.08,464H388.92c46.45,0,74.68-51.22,49.87-90.51L313.87,175.66A64.09,64.09,0,0,1,304,141.48V48' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/></svg>
-             Contribute
-        </h2>
-
-        <p>CodeIgniter is a community driven project and accepts contributions
-             of code and documentation from the community. Why not
-             <a href="https://codeigniter.com/contribute" target="_blank">
-             join us</a> ?</p>
-
-    </section>
-
-</div>
-
-<!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
-
-<footer>
-    <div class="environment">
-
-        <p>Page rendered in {elapsed_time} seconds</p>
-
-        <p>Environment: <?= ENVIRONMENT ?></p>
-
-    </div>
-
-    <div class="copyrights">
-
-        <p>&copy; <?= date('Y') ?> CodeIgniter Foundation. CodeIgniter is open source project released under the MIT
-            open source licence.</p>
-
-    </div>
-
-</footer>
-
-<!-- SCRIPTS -->
-
-<script>
-    function toggleMenu() {
-        var menuItems = document.getElementsByClassName('menu-item');
-        for (var i = 0; i < menuItems.length; i++) {
-            var menuItem = menuItems[i];
-            menuItem.classList.toggle("hidden");
+                    },
+                    {
+                        label: "Websites",
+                        tension: 0.4,
+                        borderWidth: 0,
+                        pointRadius: 0,
+                        borderColor: "#3A416F",
+                        borderWidth: 3,
+                        backgroundColor: gradientStroke2,
+                        fill: true,
+                        data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+                        maxBarThickness: 6
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            color: '#b2b9bf',
+                            font: {
+                                size: 11,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: false,
+                            drawOnChartArea: false,
+                            drawTicks: false,
+                            borderDash: [5, 5]
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#b2b9bf',
+                            padding: 20,
+                            font: {
+                                size: 11,
+                                family: "Open Sans",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+    </script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
-    }
-</script>
-
-<!-- -->
-
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="<?= base_url('assets/js/soft-ui-dashboard.min.js?v=1.0.7') ?>"></script>
 </body>
+
 </html>
