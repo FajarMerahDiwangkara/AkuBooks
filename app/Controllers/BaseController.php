@@ -55,4 +55,9 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
     }
+
+    public function index()
+    {
+        echo view('layouts/main', $data);
+    }
 }
