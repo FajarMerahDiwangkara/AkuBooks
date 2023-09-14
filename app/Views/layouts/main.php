@@ -35,7 +35,7 @@
         </div>
         <hr class="horizontal dark mt-0">
         <!-- Sidebar -->
-        <?= $this->include('partials/sidebar') ?>
+        <?php echo view('partials/sidebar', Array('sidebar_active' => $sidebar_active)); ?>
     </aside>
      <?= $this->renderSection('content') ?>
     <!--   Core JS Files   -->

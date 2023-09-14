@@ -2,7 +2,8 @@
             <div class="d-flex flex-column justify-content-between h-100">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link  active" href="../pages/dashboard.html">
+                    <?php /* https://stackoverflow.com/questions/9446700/codeigniter-passing-data-from-controller-to-view */ ?>
+                        <a class="nav-link  <?php if($sidebar_active == "dashboard") { echo "active"; } ?>" href="<?= base_url('') ?>">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>shop </title>
@@ -22,7 +23,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="../pages/billing.html">
+                        <a class="nav-link  <?php if($sidebar_active == "karyawan") { echo "active"; } ?>" href="<?= base_url('karyawan') ?>">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>credit-card</title>
@@ -42,7 +43,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="../pages/virtual-reality.html">
+                        <a class="nav-link  " href="<?= base_url('virtual-reality') ?>">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>box-3d-50</title>
@@ -63,7 +64,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="../pages/rtl.html">
+                        <a class="nav-link  " href="<?= base_url('rtl') ?>">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>settings</title>
@@ -84,7 +85,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  " href="../pages/profile.html">
+                        <a class="nav-link  " href="<?= base_url('profile') ?>">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>customer-support</title>
@@ -107,7 +108,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item d-flex align-self-end">
-                        <a class="nav-link  " href="../pages/sign-in.html">
+                        <a class="nav-link  " href="<?= base_url('sign-in') ?>">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>document</title>
