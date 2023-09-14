@@ -11,3 +11,4 @@ class KaryawanController extends BaseController
         return view('karyawan/index');
     }
 }
+?>

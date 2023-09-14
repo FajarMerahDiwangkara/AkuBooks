@@ -6,4 +6,4 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/karyawan/index', 'Karyawan::index');
+$routes->get('/karyawan/index', 'KaryawanController::index');
