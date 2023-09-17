@@ -22,3 +22,67 @@ in APPPATH\Controllers\DashboardHomeController.php on line 10.
  5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
  6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:31:38 --> syntax error, unexpected token "return"
+in APPPATH\Controllers\HomeController.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\HomeController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\HomeController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\HomeController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:31:48 --> Undefined property: App\Controllers\HomeController::$output
+in APPPATH\Controllers\HomeController.php on line 11.
+ 1 APPPATH\Controllers\HomeController.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$output', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 11)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:33:25 --> Undefined property: App\Controllers\HomeController::$output
+in APPPATH\Controllers\HomeController.php on line 11.
+ 1 APPPATH\Controllers\HomeController.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$output', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 11)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:38:19 --> syntax error, unexpected identifier "org"
+in APPPATH\Controllers\HomeController.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\HomeController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\HomeController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\HomeController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:38:26 --> Undefined variable $body
+in APPPATH\Controllers\HomeController.php on line 15.
+ 1 APPPATH\Controllers\HomeController.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $body', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 15)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:40:06 --> syntax error, unexpected variable "$returnStatusCode"
+in APPPATH\Controllers\HomeController.php on line 11.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\HomeController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\HomeController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\HomeController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:42:32 --> syntax error, unexpected variable "$returnBody"
+in APPPATH\Controllers\HomeController.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\HomeController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\HomeController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\HomeController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 09:42:38 --> Array to string conversion
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -6,7 +6,13 @@ class HomeController extends BaseController
 {
     public function index() 
     {
-        return "Homepage";
+        $returnBody = [];
+        $returnStatusCode = 200;
+        # https://codeigniter.com/user_guide/outgoing/response.html?highlight=s
+        return $this
+        ->response
+        ->setStatusCode($returnStatusCode)
+        ->setBody($returnBody);
     }
 }
 ?>
