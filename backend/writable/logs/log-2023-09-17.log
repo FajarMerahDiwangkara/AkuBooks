@@ -86,3 +86,96 @@ in APPPATH\Controllers\HomeController.php on line 9.
  3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
  4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:49:54 --> Undefined property: App\Controllers\HomeController::$load
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$load', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:51:09 --> Undefined property: App\Controllers\HomeController::$load
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$load', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:51:10 --> Undefined property: App\Controllers\HomeController::$load
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$load', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:52:22 --> Undefined property: App\Controllers\HomeController::$load
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$load', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:52:23 --> Undefined property: App\Controllers\HomeController::$load
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$load', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:54:17 --> Undefined property: App\Controllers\HomeController::$load
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$load', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:54:18 --> Undefined property: App\Controllers\HomeController::$load
+in APPPATH\Controllers\HomeController.php on line 9.
+ 1 APPPATH\Controllers\HomeController.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\HomeController::$load', 'D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Controllers\\HomeController.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:57:15 --> Class "App\Controllers\Cryptography" not found
+in APPPATH\Controllers\HomeController.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 16:58:35 --> Class "CI_Model" not found
+in APPPATH\Models\Cryptography.php on line 2.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(306): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Models\\Cryptography.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Cryptography')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Cryptography')
+ 5 SYSTEMPATH\Config\Factories.php(270): class_exists('App\\Models\\Cryptography')
+ 6 SYSTEMPATH\Config\Factories.php(196): CodeIgniter\Config\Factories::locateClass([...], 'Cryptography')
+ 7 SYSTEMPATH\Config\Factories.php(155): CodeIgniter\Config\Factories::getDefinedInstance([...], 'Cryptography', [...])
+ 8 SYSTEMPATH\Common.php(827): CodeIgniter\Config\Factories::__callStatic('models', [...])
+ 9 APPPATH\Controllers\HomeController.php(10): model('Cryptography')
+10 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+11 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+12 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 17:19:39 --> Class "App\Controllers\App\Models\Cryptography" not found
+in APPPATH\Controllers\HomeController.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 17:20:53 --> syntax error, unexpected token "return"
+in APPPATH\Models\UserAccount.php on line 16.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp install folder\\htdocs\\AkuBooks\\backend\\app\\Models\\UserAccount.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserAccount')
+ 3 APPPATH\Controllers\HomeController.php(10): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserAccount')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-17 17:39:41 --> password_hash() expects at least 2 arguments, 1 given
+in APPPATH\Models\UserAccount.php on line 32.
+ 1 APPPATH\Models\UserAccount.php(32): password_hash('test')
+ 2 APPPATH\Controllers\HomeController.php(12): App\Models\UserAccount::hash_password('test')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\HomeController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomeController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
