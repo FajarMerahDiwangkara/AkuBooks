@@ -1,7 +1,9 @@
 <?php
 namespace App\Models;
-use CodeIgniter\Model;
-class Cryptography extends Model {
+
+# note: does not extends nor use codeigniter Model class
+
+class Cryptography {
 	public static function generate_uuid4() 
 	{
 		# https://stackoverflow.com/questions/2040240/php-function-to-generate-v4-uuid
@@ -21,5 +23,16 @@ class Cryptography extends Model {
 
         return $out;
 	}
+
+    public static function validate_uuid4($uuid4) 
+    {
+        # https://stackoverflow.com/questions/12808597/php-verify-valid-uuid
+        if (!is_string($uuid4) || (preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/', $uuid4) !== 1)) 
+        {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
 ?>

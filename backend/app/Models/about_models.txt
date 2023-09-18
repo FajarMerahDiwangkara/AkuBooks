@@ -1,1 +1,4 @@
 https://codeigniter.com/userguide3/general/models.html
+
+dont extend/use Model unless you want to use database, 
+because codeigniter Model class have a lot of reserved variable you need to be careful about

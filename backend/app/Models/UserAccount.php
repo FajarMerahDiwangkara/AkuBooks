@@ -1,7 +1,9 @@
 <?php
 namespace App\Models;
-use CodeIgniter\Model;
-class UserAccount extends Model {
+
+# note: does not extends nor use codeigniter Model class
+
+class UserAccount {
 	# https://codeigniter.com/user_guide/models/model.html#models
 	private $uuid4;
 	private $hashed_password;
@@ -17,6 +19,7 @@ class UserAccount extends Model {
 
 	public function set_uuid4($uuid4)
 	{
+		assert(is_string($uuid4));
 		$uuid4 = $this->uuid4;
 	}
 
@@ -29,6 +32,7 @@ class UserAccount extends Model {
 
 	public static function hash_password($passwordPlaintext) 
 	{
+		assert(is_string($passwordPlaintext));
 		# yes password hash change everytime called, same password may produce different hash,
 		# it is intented to be like that.
 		# all information needed to verify a plaintext and a ciphertext is already
@@ -39,10 +43,13 @@ class UserAccount extends Model {
 	}
 
 	public static function verify_password($passwordPlaintext, $passwordCiphertext) {
+		assert(is_string($passwordPlaintext));
+		assert(is_string($passwordCiphertext));
 		return password_verify($passwordPlaintext, $passwordCiphertext);
 	}
 
 	public function set_hashed_password($password, $hash=true){
+		assert(is_string($password));
 		if($hash == true) {
 			$this->hashed_password = hash_password($password);
 		} else {
@@ -56,6 +63,7 @@ class UserAccount extends Model {
 	}
 
 	public function set_email_address($email_address) {
+		assert(is_string($email_address));
 		# best way to verify whether email address is valid or not, 
 		# is to try send verification email to the email address 
 		# and ask user to verify the email address.
@@ -67,6 +75,7 @@ class UserAccount extends Model {
 	}
 
 	public function set_name($name) {
+		assert(is_string($name));
 		$this->name = $name;
 	}
 
@@ -75,6 +84,7 @@ class UserAccount extends Model {
 	}
 
 	public function set_username($username) {
+		assert(is_string($username));
 		$this->username = $username;
 	}
 
@@ -88,6 +98,15 @@ class UserAccount extends Model {
 
 	public function get_email_address_verified() {
 		return $this->email_address_verified;
+	}
+
+	public static function verify_if_password_strong($passwordPlaintext) {
+		assert(is_string($passwordPlaintext));
+		if($passwordPlaintext == null || !is_string($passwordPlaintext) || len($passwordPlaintext) < 8) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 

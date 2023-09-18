@@ -10,6 +10,9 @@ class HomeController extends BaseController
         # https://stackoverflow.com/questions/3173501/whats-the-difference-between-double-colon-and-arrow-in-php
 
 
+        $userAccountModel = model('UserAccount');
+        print($userAccountModel->generate_uuid4());
+
         $returnBody = ["log" => "success", "test" => [1, 2, 3]];
         $returnBody = json_encode($returnBody);
         $returnStatusCode = 200;
