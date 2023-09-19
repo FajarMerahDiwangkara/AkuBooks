@@ -26,7 +26,7 @@ class Auth{
 		}
 	}
 	
-	public static function sign_up(UserAccount $accountData) {
+	public static function sign_up(UserAccount $accountData, $filterData=true) {
 		$data = [
 			"success" => false,
 			"uuid4_already_exist" => null,
@@ -67,6 +67,11 @@ class Auth{
 			$accountData->set_email_address_verified(false);
 		}
 
+		assert(is_string($accountData->get_name()));
+		if($filterData) {
+			$accountData->set_name(htmlspecialchars($accountData->get_name()));
+		}
+
 		if(!UserAccount::validate_name($accountData->get_name())) {
 			$data['name_valid'] = false;
 			$data['log'] = "Account name is not valid.";
@@ -74,12 +79,22 @@ class Auth{
 		}
 		$data['name_valid'] = true;
 
+		assert(is_string($accountData->get_username()));
+		if($filterData) {
+			$accountData->set_username(htmlspecialchars($accountData->get_username()));
+		}
+
 		if(!UserAccount::validate_username($accountData->get_username())) {
 			$data['username_valid'] = false;
 			$data['log'] = "Account username is not valid.";
 			return $data;
 		}
 		$data['username_valid'] = true;
+
+		assert(is_string($accountData->get_email_address()));
+		if($filterData) {
+			$accountData->set_email_address(htmlspecialchars($accountData->get_email_address()));
+		}
 
 		if(!UserAccount::validate_password_plaintext_good($accountData->get_password_plaintext())) {
 			$data['password_good'] = false;

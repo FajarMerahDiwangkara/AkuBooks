@@ -10,14 +10,7 @@ class HomeController extends BaseController
         # https://stackoverflow.com/questions/3173501/whats-the-difference-between-double-colon-and-arrow-in-php
         # https://stackoverflow.com/questions/2418473/difference-between-require-include-require-once-and-include-once
 
-        $testAccountData = new \App\Models\UserAccount();
-        $testAccountData->set_uuid4(\App\Models\UserAccount::generate_uuid4());
-        $testAccountData->set_password_plaintext("adminadmin");
-        $testAccountData->set_email_address("admin@admin.com");
-        $testAccountData->set_name("Admin name");
-        $testAccountData->set_username("Admin username");
-
-        print_r(\App\Models\Auth::sign_up($testAccountData));
+        
 
         $returnBody = ["log" => "homepage"];
         $returnBody = json_encode($returnBody);
@@ -28,5 +21,6 @@ class HomeController extends BaseController
         ->setStatusCode($returnStatusCode)
         ->setBody($returnBody);
     }
+
 }
 ?>
