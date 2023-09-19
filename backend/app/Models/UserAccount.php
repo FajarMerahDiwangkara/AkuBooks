@@ -19,6 +19,11 @@ class UserAccount {
 		return Cryptography::generate_uuid4();
 	}
 
+	public static function validate_uuid4()
+	{
+		return Cryptography::validate_uuid4();
+	}
+
 	public function set_uuid4($uuid4)
 	{
 		assert(is_string($uuid4));
@@ -97,10 +102,6 @@ class UserAccount {
 
 	public function get_email_address_verified() {
 		return $this->_email_address_verified;
-	}
-
-	public static function validate_uuid4($uuid4) {
-		return Cryptography::validate_uuid4($uuid4);
 	}
 
 	public static function validate_name($name) {
