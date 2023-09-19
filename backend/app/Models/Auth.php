@@ -32,6 +32,7 @@ class Auth{
 			"uuid4_already_exist" => null,
 			"name_valid" => null,
 			"username_valid" => null,
+			"email_address_not_null" => null,
 			"password_good" => null,
 			"email_address_not_registered" => null,
 			"log" => ""
@@ -67,8 +68,7 @@ class Auth{
 			$accountData->set_email_address_verified(false);
 		}
 
-		assert(is_string($accountData->get_name()));
-		if($filterData) {
+		if($filterData && $accountData->get_name() != null) {
 			$accountData->set_name(htmlspecialchars($accountData->get_name()));
 		}
 
@@ -79,8 +79,7 @@ class Auth{
 		}
 		$data['name_valid'] = true;
 
-		assert(is_string($accountData->get_username()));
-		if($filterData) {
+		if($filterData && $accountData->get_username() != null) {
 			$accountData->set_username(htmlspecialchars($accountData->get_username()));
 		}
 
@@ -91,10 +90,16 @@ class Auth{
 		}
 		$data['username_valid'] = true;
 
-		assert(is_string($accountData->get_email_address()));
-		if($filterData) {
+		if($filterData && $accountData->get_email_address() != null) {
 			$accountData->set_email_address(htmlspecialchars($accountData->get_email_address()));
 		}
+
+		if($accountData->get_email_address() == null) {
+			$data['email_address_not_null'] = false;
+			$data['log'] = "Email address is null";
+			return $data;
+		}
+		$data['email_address_not_null'] = true;
 
 		if(!UserAccount::validate_password_plaintext_good($accountData->get_password_plaintext())) {
 			$data['password_good'] = false;

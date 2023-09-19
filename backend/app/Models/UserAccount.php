@@ -106,22 +106,18 @@ class UserAccount {
 	}
 
 	public static function validate_name($name) {
-		assert(is_string($name));
-		if(strlen(trim($name)) == 0) {
+		assert(is_string($name) || $name == null);
+		if(strlen(trim($name)) == 0 || $name == null) {
 			return false;
 		}
-		# TODO
-
 		return true;
 	}
 
 	public static function validate_username($username) {
-		assert(is_string($username));
-		# TODO
-		if(strlen(trim($username)) == 0) {
+		assert(is_string($username) || $username == null);
+		if(strlen(trim($username)) == 0 || $username == null) {
 			return false;
 		}
-
 		return true;
 	}
 
