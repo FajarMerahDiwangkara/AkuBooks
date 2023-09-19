@@ -27,7 +27,7 @@ class UserAccount {
 
 	public function set_uuid4($uuid4)
 	{
-		assert(is_string($uuid4));
+		assert(is_string($uuid4) || $uuid4 == null);
 		$this->_uuid4 = $uuid4;
 	}
 
@@ -40,7 +40,7 @@ class UserAccount {
 
 	public static function hash_password($password_plaintext) 
 	{
-		assert(is_string($password_plaintext));
+		assert(is_string($password_plaintext) || null);
 		# yes password hash change everytime called, same password may produce different hash,
 		# it is intented to be like that.
 		# all information needed to verify a plaintext and a ciphertext is already
@@ -51,13 +51,13 @@ class UserAccount {
 	}
 
 	public static function verify_password($password_plaintext, $password_ciphertext) {
-		assert(is_string($password_plaintext));
-		assert(is_string($password_ciphertext));
+		assert(is_string($password_plaintext) || $password_plaintext == null);
+		assert(is_string($password_ciphertext) || $password_plaintext == null);
 		return password_verify($password_plaintext, $password_ciphertext);
 	}
 
 	public function set_password_plaintext($password_plaintext, $hash=true){
-		assert(is_string($password_plaintext));
+		assert(is_string($password_plaintext) || $password_plaintext == null);
 		$this->_password_plaintext = $password_plaintext;
 		
 	}
@@ -68,7 +68,7 @@ class UserAccount {
 	}
 
 	public function set_email_address($email_address) {
-		assert(is_string($email_address));
+		assert(is_string($email_address) || $email_address == null);
 		# best way to verify whether email address is valid or not, 
 		# is to try send verification email to the email address 
 		# and ask user to verify the email address.
@@ -80,7 +80,7 @@ class UserAccount {
 	}
 
 	public function set_name($name) {
-		assert(is_string($name));
+		assert(is_string($name)  || $name == null);
 		$this->_name = $name;
 	}
 
@@ -89,7 +89,7 @@ class UserAccount {
 	}
 
 	public function set_username($username) {
-		assert(is_string($username));
+		assert(is_string($username) || $username == null);
 		$this->_username = $username;
 	}
 

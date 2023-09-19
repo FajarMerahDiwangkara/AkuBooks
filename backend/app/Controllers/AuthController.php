@@ -10,10 +10,26 @@ class AuthController extends BaseController
         # https://codeigniter.com/userguide3/libraries/input.html#using-post-get-cookie-or-server-data
         $accountData = new \App\Models\UserAccount();
         $accountData->set_uuid4(\App\Models\UserAccount::generate_uuid4());
-        $accountData->set_password_plaintext($_POST['password_plaintext']);
-        $accountData->set_email_address($_POST['email_address']);
-        $accountData->set_name($_POST['name']);
-        $accountData->set_username($_POST['username']);
+        if(isset($_POST['password_plaintext'])) {
+            $accountData->set_password_plaintext($_POST['password_plaintext']);
+        } else {
+            $accountData->set_password_plaintext(null);
+        }
+        if(isset($_POST['email_address'])) {
+            $accountData->set_email_address($_POST['email_address']);
+        } else {
+            $accountData->set_email_address(null);
+        }
+        if(isset($_POST['name'])) {
+            $accountData->set_name($_POST['name']);
+        } else {
+            $accountData->set_name(null);
+        }
+        if(isset($_POST['username'])) {
+            $accountData->set_username($_POST['username']);
+        } else {
+            $accountData->set_username(null);
+        }
         print_r(\App\Models\Auth::sign_up($accountData));
     }
 }
