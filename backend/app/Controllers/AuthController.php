@@ -30,7 +30,19 @@ class AuthController extends BaseController
         } else {
             $accountData->set_username(null);
         }
-        print_r(\App\Models\Auth::sign_up($accountData));
+        return json_encode(\App\Models\Auth::sign_up($accountData));
+    }
+
+    public function sign_in() {
+        $email_address = null;
+        $password_plaintext = null;
+        if(isset($_POST['email_address'])) {
+            $email_address = $_POST['email_address'];
+        }
+        if(isset($_POST['password_plaintext'])) {
+            $password_plaintext = $_POST['password_plaintext'];
+        }
+        return json_encode(\App\Models\Auth::sign_in($email_address, $password_plaintext));
     }
 }
 

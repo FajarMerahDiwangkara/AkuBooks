@@ -135,6 +135,53 @@ class Auth{
 		$data['success'] = true;
 		return $data;
 	}
+
+	public static function sign_in($email_address, $password_plaintext) {
+		$data = [
+			"success" => false,
+			"email_address_not_null" => null,
+			"password_not_null" => null,
+			"email_address_or_password_correct" => null,
+			"email_address_not_verified" => null,
+			"log" => ""
+		];
+
+		$db = db_connect('userAccount', true);
+
+		if($email_address == null) {
+			$data['email_address_not_null'] = false;
+			$data['log'] = "Email address is null";
+			return $data;
+		}
+		$data['email_address_not_null'] = true;
+
+		if($password_plaintext == null) {
+			$data['password_not_null'] = false;
+			$data['log'] = "Password is null";
+			return $data;
+		}
+		$data['password_not_null'] = true;
+
+		$preparedQuery = $db->prepare(static function ($db) {
+		$query = 'SELECT hashed_password FROM user_account_info WHERE email=?;';
+		return (new Query($db))->setQuery($query);
+		});
+		$queryResult = $preparedQuery->execute($email_address)->getResultArray();
+		$passwordCiphertext = null;
+		if(count($queryResult) != 0) {
+			$passwordCiphertext = $queryResult[0]['hashed_password'];
+		}
+		if(!UserAccount::verify_password($password_plaintext, $passwordCiphertext)) {
+			$data['email_address_or_password_correct'] = false;
+			$data['log'] = "Email address or password is incorrect.";
+			return $data;
+		}
+		$data['email_address_or_password_correct'] = true;
+
+		# TODO
+		return $data;
+
+	}
 }
 
 

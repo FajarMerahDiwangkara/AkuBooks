@@ -9,3 +9,4 @@ use CodeIgniter\Router\RouteCollection;
  # https://codeigniter4.github.io/userguide/incoming/routing.html
 $routes->get('/', 'HomeController::index');
 $routes->post('/auth/sign_up', 'AuthController::sign_up');
+$routes->post('/auth/sign_in', 'AuthController::sign_in');
