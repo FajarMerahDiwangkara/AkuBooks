@@ -36,6 +36,8 @@ class Auth{
 			"email_address_not_registered" => null,
 			"log" => ""
 		];
+
+		$db = db_connect('userAccount', true);
 		
 		# remember that != is different from !==
 		if($accountData->get_uuid4() !== null) {
@@ -59,7 +61,7 @@ class Auth{
 		}
 		$data['uuid4_already_exist'] = false;
 
-		if($accountData->get_email_address_verified() !== null) {
+		if($accountData->get_email_address_verified() == null) {
 			# check if accountData already have value for email_address_verified,
 			# if not then set value to false
 			$accountData->set_email_address_verified(false);
@@ -86,7 +88,7 @@ class Auth{
 		}
 		$data['password_good'] = true;
 
-		if(check_if_email_address_registered($accountData->get_email_address())) {
+		if(self::check_if_email_address_registered($accountData->get_email_address())) {
 			$data['email_address_not_registered'] = false;
 			$data['log'] = "Account email is already registered.";
 			return $data;

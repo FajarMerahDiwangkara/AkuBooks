@@ -28,7 +28,7 @@ class Cryptography {
     {
         assert(is_string($uuid4));
         # https://stackoverflow.com/questions/12808597/php-verify-valid-uuid
-        if (len($uuid4) != 36 || 
+        if (strlen($uuid4) != 36 || 
         (preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/', $uuid4) !== 1)) 
         {
             return false;

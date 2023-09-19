@@ -19,9 +19,10 @@ class UserAccount {
 		return Cryptography::generate_uuid4();
 	}
 
-	public static function validate_uuid4()
+	public static function validate_uuid4($uuid4)
 	{
-		return Cryptography::validate_uuid4();
+		assert(is_string($uuid4));
+		return Cryptography::validate_uuid4($uuid4);
 	}
 
 	public function set_uuid4($uuid4)
@@ -106,7 +107,7 @@ class UserAccount {
 
 	public static function validate_name($name) {
 		assert(is_string($name));
-		if(len(trim($name)) == 0) {
+		if(strlen(trim($name)) == 0) {
 			return false;
 		}
 		# TODO
@@ -117,7 +118,7 @@ class UserAccount {
 	public static function validate_username($username) {
 		assert(is_string($username));
 		# TODO
-		if(len(trim($username)) == 0) {
+		if(strlen(trim($username)) == 0) {
 			return false;
 		}
 
@@ -127,7 +128,7 @@ class UserAccount {
 
 	public static function validate_password_plaintext_good($password_plaintext) {
 		assert(is_string($password_plaintext));
-		if(len($password_plaintext) < 8) {
+		if(strlen($password_plaintext) < 8) {
 			return false;
 		} else {
 			return true;
