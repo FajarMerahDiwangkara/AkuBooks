@@ -123,8 +123,8 @@ class UserAccount {
 
 
 	public static function validate_password_plaintext_good($password_plaintext) {
-		assert(is_string($password_plaintext));
-		if(strlen($password_plaintext) < 8) {
+		assert(is_string($password_plaintext) || $password_plaintext == null);
+		if(strlen($password_plaintext) < 8 || $password_plaintext == null) {
 			return false;
 		} else {
 			return true;
