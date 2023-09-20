@@ -6,6 +6,18 @@ use CodeIgniter\Database\Query;
 
 class Auth{
 
+	public static function login_status() {
+		$data = [
+			"logged_in" => null
+		];
+		# https://stackoverflow.com/questions/6249707/check-if-php-session-has-already-started
+		if(session_status() == PHP_SESSION_NONE) {
+			$data["logged_in"] = false;
+			return $data
+		}
+		# TODO
+	}
+
 	public static function check_if_email_address_registered($email_address) {
 		assert(is_string($email_address));
 		# https://codeigniter.com/user_guide/database/connecting.html
@@ -29,6 +41,7 @@ class Auth{
 	public static function sign_up(UserAccount $account_data, $filter_data=true) {
 		$data = [
 			"success" => false,
+			"already_logged_in" => null,
 			"uuid4_already_exist" => null,
 			"name_valid" => null,
 			"username_valid" => null,
@@ -139,6 +152,7 @@ class Auth{
 	public static function sign_in($email_address, $password_plaintext) {
 		$data = [
 			"success" => false,
+			"already_logged_in" => null,
 			"email_address_not_null" => null,
 			"password_not_null" => null,
 			"email_address_or_password_correct" => null,

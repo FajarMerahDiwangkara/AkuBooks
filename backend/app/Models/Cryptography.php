@@ -36,5 +36,9 @@ class Cryptography {
             return true;
         }
     }
+
+    public static function generate_csrf_token($session_id) {
+
+    }
 }
 ?>
