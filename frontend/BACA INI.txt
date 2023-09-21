@@ -1,4 +1,0 @@
-root folder codeigniter4 itu di public/ bukan di sini
-jika ke public ada error extensi intl tidak terinstall, 
-baca jawaban oleh Wael Alshabani untuk enable extensi intl di xampp
-https://stackoverflow.com/questions/33869521/how-can-i-enable-php-extension-intl
