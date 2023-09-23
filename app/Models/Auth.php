@@ -271,6 +271,8 @@ class Auth{
 				}
 				);
 				$prepared_query->execute($user_uuid4);
+				# https://stackoverflow.com/questions/6076214/why-is-php-generating-the-same-session-ids-everytime-in-test-environment-wamp
+				session_regenerate_id(TRUE); 
 				session_destroy();
 				$data["success"] = true;
 			}

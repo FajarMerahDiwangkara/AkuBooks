@@ -30,7 +30,15 @@ class AuthController extends BaseController
         } else {
             $accountData->set_username(null);
         }
-        return json_encode(\App\Models\Auth::sign_up($accountData));
+
+        $data = \App\Models\Auth::sign_up($accountData);
+        if($data['already_logged_in']) {
+            helper('url');
+            # https://stackoverflow.com/questions/58707864/codeigniter-4-redirect-function-not-working
+            return redirect()->to('/'); 
+        } else {
+            return json_encode($data);
+        }
     }
 
     public function sign_in() {
@@ -42,7 +50,14 @@ class AuthController extends BaseController
         if(isset($_POST['password_plaintext'])) {
             $password_plaintext = $_POST['password_plaintext'];
         }
-        return json_encode(\App\Models\Auth::sign_in($email_address, $password_plaintext));
+        $data = \App\Models\Auth::sign_in($email_address, $password_plaintext);
+        if($data['already_logged_in'] || $data['success']) {
+            helper('url');
+            # https://stackoverflow.com/questions/58707864/codeigniter-4-redirect-function-not-working
+            return redirect()->to('/'); 
+        } else {
+            return json_encode($data);
+        }
     }
 
     public function sign_out() {
