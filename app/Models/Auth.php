@@ -6,16 +6,50 @@ use CodeIgniter\Database\Query;
 
 class Auth{
 
-	public static function login_status() {
-		$data = [
-			"logged_in" => null
-		];
+	public static function is_logged_in() {
 		# https://stackoverflow.com/questions/6249707/check-if-php-session-has-already-started
-		if(session_status() == PHP_SESSION_NONE) {
-			$data["logged_in"] = false;
-			return $data
+		if(session_status() == PHP_SESSION_NONE || !isset($_SESSION['login_session_token']) 
+		|| $_SESSION['login_session_token'] == null ) {
+			return false;
 		}
-		# TODO
+		# check that login session token is still valid
+		$db = db_connect('userAccount', true);
+		$prepared_query = $db->prepare(static function ($db) {
+			$query = 'SELECT 1 FROM user_account_login_session WHERE session_id=? AND login_session_token=?';
+			return (new Query($db))->setQuery($query);
+		}
+		);
+		$query_result = $prepared_query->execute(session_id(), $_SESSION['login_session_token'])->getResultArray();
+		if(count($query_result) == 0) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public static function set_login_session($user_uuid4, $session_id, $login_session_token) {
+		$db = db_connect('userAccount', true);
+		$prepared_query = $db->prepare(static function ($db) {
+			$query = 'DELETE FROM user_account_login_session WHERE user_uuid4=?';
+			return (new Query($db))->setQuery($query);
+		}
+		);
+		$prepared_query->execute($user_uuid4);
+		$prepared_query = $db->prepare(static function ($db) {
+			$query = 'INSERT INTO user_account_login_session(user_uuid4, session_id, login_session_token,'.
+			' session_creation_datetime)'.
+			' VALUES (?,?,?,?);';
+			return (new Query($db))->setQuery($query);
+		}
+		);
+		$prepared_query->execute(
+			$user_uuid4, 
+			$session_id, 
+			$login_session_token, 
+			date('y-m-d h:m:s', time())
+		);
+		# https://codeigniter4.github.io/userguide/libraries/cookies.html
+		$_SESSION['login_session_token'] = $login_session_token;
 	}
 
 	public static function check_if_email_address_registered($email_address) {
@@ -162,6 +196,17 @@ class Auth{
 
 		$db = db_connect('userAccount', true);
 
+		if(session_status() == PHP_SESSION_NONE) {
+			session_start();
+		}
+
+		if(self::is_logged_in()) {
+			$data['already_logged_in'] = true;
+			$data['log'] = "You are already logged in";
+			return $data;
+		}
+		$data['already_logged_in'] = false;
+
 		if($email_address == null) {
 			$data['email_address_not_null'] = false;
 			$data['log'] = "Email address is null";
@@ -177,7 +222,7 @@ class Auth{
 		$data['password_not_null'] = true;
 
 		$prepared_query = $db->prepare(static function ($db) {
-		$query = 'SELECT hashed_password FROM user_account_info WHERE email=?;';
+		$query = 'SELECT uuid4,hashed_password FROM user_account_info WHERE email=?;';
 		return (new Query($db))->setQuery($query);
 		});
 		$query_result = $prepared_query->execute($email_address)->getResultArray();
@@ -192,9 +237,46 @@ class Auth{
 		}
 		$data['email_address_or_password_correct'] = true;
 
-		# TODO
-		return $data;
+		$user_uuid4 = $query_result[0]['uuid4'];
 
+		self::set_login_session($user_uuid4, session_id(), Cryptography::generate_uuid4());
+
+		$data['success'] = true;
+		
+		return $data;
+	}
+
+	public static function sign_out() {
+		$data = [
+			"success" => false
+		];
+		if(session_status() == PHP_SESSION_NONE) {
+			session_start();
+		}
+		if(isset($_SESSION['login_session_token'])) {
+			$db = db_connect('userAccount', true);
+			$prepared_query = $db->prepare(static function ($db) {
+				$query = 'SELECT user_uuid4 FROM user_account_login_session WHERE session_id=? AND login_session_token=?';
+				return (new Query($db))->setQuery($query);
+			}
+			);
+			$query_result = 
+			$prepared_query->execute(session_id(), $_SESSION['login_session_token'])->getResultArray();
+			if(count($query_result) != 0) {
+				$user_uuid4 = $query_result[0]['user_uuid4'];
+				$db = db_connect('userAccount', true);
+				$prepared_query = $db->prepare(static function ($db) {
+					$query = 'DELETE FROM user_account_login_session WHERE user_uuid4=?';
+					return (new Query($db))->setQuery($query);
+				}
+				);
+				$prepared_query->execute($user_uuid4);
+				session_destroy();
+				$data["success"] = true;
+			}
+		}
+
+		return $data;
 	}
 }
 

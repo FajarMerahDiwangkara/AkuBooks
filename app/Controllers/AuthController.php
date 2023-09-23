@@ -44,6 +44,10 @@ class AuthController extends BaseController
         }
         return json_encode(\App\Models\Auth::sign_in($email_address, $password_plaintext));
     }
+
+    public function sign_out() {
+        return json_encode(\App\Models\Auth::sign_out());
+    }
 }
 
 ?>

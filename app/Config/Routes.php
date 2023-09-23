@@ -10,3 +10,5 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'HomeController::index');
 $routes->post('/auth/sign_up', 'AuthController::sign_up');
 $routes->post('/auth/sign_in', 'AuthController::sign_in');
+$routes->get('/auth/sign_out', 'AuthController::sign_out');
+$routes->post('/auth/sign_out', 'AuthController::sign_out');

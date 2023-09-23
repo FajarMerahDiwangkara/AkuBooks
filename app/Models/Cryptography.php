@@ -38,7 +38,7 @@ class Cryptography {
     }
 
     public static function generate_csrf_token($session_id) {
-
+        return self::generate_uuid4();
     }
 }
 ?>
